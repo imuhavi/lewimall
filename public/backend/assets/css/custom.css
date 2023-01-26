@@ -1,0 +1,74 @@
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: right;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* .form-control .input-search{
+  width: 100% !important;
+} */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 99;
+}
+
+#status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(https://c.tenor.com/8KWBGNcD-zAAAAAC/loader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}
+
+
+
+.pagination {
+    display: inline !important;
+}
+
+.small-image{
+    height: 35px;
+    width: 35px;
+}
+
+.thumbnail-img {
+  height: 120px;
+  width: 120px;
+}
+
+.fdots-custom-label {
+  padding-top: 7px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.dashboar-card {
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboar-card p,
+h2 {
+  margin: 0;
+  padding: 2px 0;
+}
+
+.dashboar-card i {
+  font-size: 80px;
+}

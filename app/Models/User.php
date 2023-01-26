@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable implements MustVerifyEmail
+{
+  use HasApiTokens, HasFactory, Notifiable;
+
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array<int, string>
+   */
+  protected $fillable = [
+    'name',
+    'email',
+    'password',
+    'phone',
+    'phone_2',
+    'avatar',
+    'address',
+    'balance',
+    'due_balance',
+    'provider_id',
+    'provider',
+    'role',
+    'email_verified_at'
+  ];
+
+  /**
+   * The attributes that should be hidden for serialization.
+   *
+   * @var array<int, string>
+   */
+  protected $hidden = [
+    'password',
+    'remember_token',
+  ];
+
+  /**
+   * The attributes that should be cast.
+   *
+   * @var array<string, string>
+   */
+  protected $casts = [
+    'email_verified_at' => 'datetime',
+  ];
+
+  public function shop()
+  {
+    return $this->hasOne(Shop::class)->orderBy('updated_at', 'desc');
+  }
+
+
+  public function product()
+  {
+    return $this->hasMany(Product::class)->orderBy('updated_at', 'desc');
+  }
+
+  public function userDetail()
+  {
+    return $this->hasOne(UserDetail::class);
+  }
+
+
+  public function order()
+  {
+    return $this->hasOne(Order::class);
+  }
+}
